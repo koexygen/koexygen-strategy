@@ -8,6 +8,9 @@
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
+  "permissions": [
+    "activeTab"
+  ],
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
@@ -16,7 +19,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "matches": [
+        "https://*.tradingview.com/*"
+      ],
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }

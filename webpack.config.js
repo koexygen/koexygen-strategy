@@ -5,6 +5,7 @@ var webpack = require('webpack'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
@@ -66,6 +67,10 @@ var options = {
           {
             loader: 'css-loader',
           },
+          {
+            loader: "postcss-loader",
+          },
+
           {
             loader: 'sass-loader',
             options: {
